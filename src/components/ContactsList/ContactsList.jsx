@@ -12,21 +12,17 @@ const ContactsList = () => {
 
   const normalizeFilter = filter?.toLocaleLowerCase();
 
-  console.log(contacts);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const filterContacts = contacts.filter(fil => {
     return fil.name.toLocaleLowerCase().includes(normalizeFilter);
   });
 
-  console.log(filterContacts);
-
   const deleteCon = contactId => {
     dispatch(deleteContact(contactId));
   };
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <div>

@@ -28,7 +28,7 @@ export const conSlice = createSlice({
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         console.log(payload);
-        state.items = state.items.filter(ret => ret.id !== payload);
+        state.items = state.items.filter(ret => ret.id !== payload.id);
       })
       .addMatcher(isAnyOf(...getActions('pending')), state => {
         state.isLoading = true;

@@ -50,10 +50,10 @@ function ContactsForm() {
 
     dispatch(addContact(newContact));
 
-    console.log(newContact);
-
     resetForm();
   };
+
+  console.log(contacts);
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
