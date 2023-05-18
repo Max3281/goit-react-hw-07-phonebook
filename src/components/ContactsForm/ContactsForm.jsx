@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
 import { addContact } from '../../redux/operations';
 import { selectContacts } from 'redux/selectors';
@@ -44,7 +43,7 @@ function ContactsForm() {
     }
 
     const newContact = {
-      id: nanoid(9),
+      id: '',
       name: name,
       number: number,
     };
